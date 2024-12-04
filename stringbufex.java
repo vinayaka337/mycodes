@@ -6,6 +6,9 @@ public class stringbufex {
 	   
 	    String s="sampleeeeeeeeeeee";
 	    char []ch=s.toCharArray();
+
+	    //give space between declaration and code
+	    //
 	    for(int i=0;i<ch.length;i++)
 	    {
 	    	System.out.println(ch[i]);
