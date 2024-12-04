@@ -1,3 +1,4 @@
+//comment added by me
 package myownjavaprogs;
 
 public class samplethread {
