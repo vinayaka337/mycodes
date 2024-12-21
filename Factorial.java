@@ -9,7 +9,7 @@ public static void main(String... args) {
 	System.out.println("number for the factorial?");
     n=sc.nextInt();
     int factn=fact(n);    
-    System.out.println("factorial of a number(changed output)"+factn);
+    System.out.println("factorial of a number"+factn);
 }
 
 
