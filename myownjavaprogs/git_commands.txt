@@ -1,0 +1,120 @@
+git commands
+
+=> 	Clone/check out the code / the repository
+	git clone <url> [location]
+   
+	git clone https://github.com/mycode 
+		--> it will be downloaded into mycode folder 
+	git clone https://github.com/mycode .
+		--> it will be downloaded into current folder
+	git clone https://github.com/mycode src
+		--> it will be downloaded into src folder
+		
+==> creation of a new branch
+	git checkout -b <branchname> <basebranch>
+	
+	git checkout -b bugfix/bug_1234_critical_bug remotes/origin/release/1.0.0.0
+		--> a new branch bugfix/bug_1234_critical_bug will be created with the release/1.0.0.0 code available on the server. (release/1.0.0.0 = your branch)
+
+==> To see/know the current branch
+	git branch
+		--> it will show the current branch.
+	git branch -a
+		--> shows all the branches on the server
+
+==> To delete a branch locally 
+	git branch -d <branch>
+		--> local branch will be deleted
+	git branch -D <branch>
+		--> deletes both locally and from the server
+
+==> To check-in the code
+	* checkout the code
+	* do modifications or additions or deletions to the code (add a file/modify a file/delete a file)
+	* commit the changes by adding new files/folders created
+	* push the changes to the server
+	
+	git clone https://github.com/myowncode 
+	(modify)
+	vi or notepad sample.java
+	add comment lines to the file 
+    vi or notepad sample1.java
+	change the logic in the code
+	(2 files changed)
+	
+	git commit -a -m <message>
+	
+	git commit -a -m "added comments and modified the logic"
+	
+	
+	Push the code
+	git push origin [branchname]
+	
+	
+	(add a new file)
+	vi or notepad newfile.java
+	
+	git add newfile.java
+	git commit -a -m "message"
+	git push origin branch
+	
+	(delete)
+	git rm filename
+	git commit -a -m "message"
+	git push origin branch
+	
+==> Refresh or sync the local code with server
+	git pull
+	
+==> To see the log of commits or changes made 
+	git log
+	
+==> To Revert the recent commit
+	git revert [commitid]
+	
+	git revert
+	--> reverts or undoes the recent commit
+	
+	git revert 123456
+	--> reverts the code until the commit 12456
+	
+==>	To see the changes locally
+	git status
+	
+==>	Restore the files back to original
+	git restore <filename> .
+	
+	To revert all the changes
+	git restore -- .
+	
+==> Rename a branch locally
+	git branch -m <newname>
+	
+	git branch -m bugfix/bug_xyz 
+	--> bugfix/bug_1234_critical_bug  will be renamed to bugfix/bug_xyz
+
+	rename a branch both local and server
+	git branch -M <newbranchname>
+	
+	
+	git mv source target
+	
+	git mv mycode owncode
+	--> mycode will be renamed to owncode
+	
+	
+	
+==>	For creating a new reposirory from local system
+	git init <reponame>
+    --> just creates a new repo with default branch named 'master' (note, branch name will be 'main' if created from Server)
+	git branch -M main (to rename the default branch 'master' to 'main'.
+	
+	<add new files>
+	git add firstreadme.txt
+	<commit the file>
+	git commit -m "initial file commit"
+	git remote add origin https://github.com/<username>/reponame.git
+	<push the repo to server>
+	git push -u origin master
+	
+	
